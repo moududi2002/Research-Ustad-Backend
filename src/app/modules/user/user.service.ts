@@ -56,6 +56,7 @@ export class UserService {
         google_scholar: '',
         linkedin: '',
         orcid: '',
+        portfolio: '',
       },
       citations: payload.citations || 0,
       expertise: payload.expertise || [],

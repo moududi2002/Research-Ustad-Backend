@@ -79,6 +79,7 @@ const userSchema = new Schema<TUser, UserModel>(
       google_scholar: { type: String, default: '' },
       linkedin: { type: String, default: '' },
       orcid: { type: String, default: '' },
+      portfolio: { type: String, default: '' },
     },
     expertise: [{ type: String, default: [] }],
     awards: [{ type: String, default: [] }],

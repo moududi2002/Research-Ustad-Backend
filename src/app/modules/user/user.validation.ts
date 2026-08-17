@@ -70,6 +70,8 @@ const createResearchMemberValidationSchema = z.object({
         google_scholar: z.string().optional(),
         researchgate: z.string().optional(),
         linkedin: z.string().optional(),
+        orcid: z.string().optional(),
+        portfolio: z.string().optional(),
       })
       .optional(),
     expertise: z.array(z.string()).optional(),
@@ -139,6 +141,8 @@ const createResearchMemberJsonValidationSchema = z.object({
         google_scholar: z.string().optional(),
         researchgate: z.string().optional(),
         linkedin: z.string().optional(),
+        orcid: z.string().optional(),
+        portfolio: z.string().optional(),
       })
       .optional(),
     expertise: z.array(z.string()).optional(),
@@ -210,6 +214,8 @@ const updateResearchMemberValidationSchema = z.object({
         google_scholar: z.string().optional(),
         researchgate: z.string().optional(),
         linkedin: z.string().optional(),
+        orcid: z.string().optional(),
+        portfolio: z.string().optional(),
       })
       .optional(),
     expertise: z.array(z.string()).optional(),

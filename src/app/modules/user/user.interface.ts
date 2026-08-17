@@ -38,6 +38,7 @@ export interface TUser {
     google_scholar?: string;
     linkedin?: string;
     orcid?: string;
+    portfolio?: string;
   };
   expertise?: string[];
   awards?: string[];
