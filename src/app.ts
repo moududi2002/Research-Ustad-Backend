@@ -8,6 +8,7 @@ import * as http from 'http';
 import { io } from './app/utils/socket';
 import path from 'path';
 import config from './app/config/index';
+import 'express-async-errors';
 
 const app: Application = express();
 const server = http.createServer(app);
@@ -70,6 +71,14 @@ app.use(
   }),
 );
 
+
+app.use(
+  '/api/v1/payment-admin/ipn',
+  express.json({
+    limit: '16kb',
+    type: 'application/json',
+  })
+);
 app.use(express.json({ limit: '100mb' })); // Higher limits for VPS deployment
 app.use(express.urlencoded({ extended: true, limit: '100mb' })); // Higher limits for VPS deployment
 app.use(cookieParser());

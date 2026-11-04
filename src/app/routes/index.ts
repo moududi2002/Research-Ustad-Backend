@@ -1,3 +1,4 @@
+// src/app/routes/index.ts
 import { Router } from 'express';
 import { AuthRoutes } from '../modules/Auth/auth.route';
 import { ResearchPaperRoutes } from '../modules/ResearchPaper/ResearchPaper.route';
@@ -10,6 +11,10 @@ import { BlogCategoryRouter } from '../modules/BlogCategory/BlogCategory.router'
 import { AchievementRoutes } from '../modules/Achievement/achievement.router';
 import { InternationalConferenceRoutes } from '../modules/InternationalConference/internationalConference.router';
 import { ContactRoutes } from '../modules/Contact/contact.router';
+
+
+
+import { PaymentRoutes } from '../modules/Payment/payment.routes';
 
 const router = Router();
 const moduleRoutes = [
@@ -57,6 +62,10 @@ const moduleRoutes = [
     path: '/contact',
     route: ContactRoutes,
   },
+  {
+  path: '/payment-admin',
+  route: PaymentRoutes,
+},
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

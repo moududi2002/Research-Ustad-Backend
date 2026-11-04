@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import app from './app';
 import config from './app/config';
 import seedSuperAdmin from './app/DB';
+import { seedPaymentAdmin } from './app/modules/Payment/payment.routes';
 
 let server: Server;
 
@@ -26,7 +27,15 @@ async function main() {
 
     console.log('🌱 Seeding super admin...');
     await seedSuperAdmin();
+
     console.log('✅ Super admin seeded');
+
+  
+    console.log('🌱 Seeding payment admin...');
+    await seedPaymentAdmin();
+
+    console.log('✅ Payment admin seed completed');
+
 
     server = app.listen(config.port, () => {
       console.log(`🚀 Server is running on port ${config.port}`);
